@@ -1,0 +1,49 @@
+<div style="background-color: #F8F8F8;">
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+        <div class="parent">
+            <div class="child">
+                <div nz-row class="imgDiv">
+                    <h2 style="margin-left: 240px;">My Profile</h2>
+                </div>
+
+                <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" style="margin-top: 20px;">
+                    <div nz-row>
+                        <div nz-col [nzMd]="24" [nzSm]="24" [nzXs]="24" style="margin-left: 180px;">
+                            <div class="profile-badge">
+                                <img class="profile" [src]="avatarUrl" alt="profile" />
+
+                                <input type="file" nz-button nzType="primary" id="upload_profile_image"
+                                    accept="image/x-png,image/gif,image/jpeg" (change)="uploadFile($event)">
+                                <label for="upload_profile_image">
+                                    <img id="add_img_icon" class="upload-icon" src="../../../../assets/add_icon.png" />
+                                </label>
+                                <button nz-button nzShape="circle">
+                                </button>
+                            </div>
+
+                        </div>
+                        <div nz-col nzSpan="24" style="margin-top: 20px;">
+                            <nz-form-item>
+                                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+                                    <input nz-input placeholder="Name" formControlName="name" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div nz-col nzSpan="24">
+                            <nz-form-item>
+                                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+
+                                    <input nz-input placeholder="Email" formControlName="email" [disabled]="true" />
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                    </div>
+
+
+                    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Update
+                        Profile</button>
+                </form>
+            </div>
+        </div>
+    </nz-spin>
+</div>

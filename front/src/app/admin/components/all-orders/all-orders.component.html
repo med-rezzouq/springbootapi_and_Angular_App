@@ -1,0 +1,20 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <nz-table #basicTable [nzData]="Orders" [nzPageSize]="20" [nzShowPagination]="'false'">
+        <thead>
+            <tr>
+                <th style="font-weight: bolder; color: #1890ff;">Order ID</th>
+                <th style="font-weight: bolder; color: #1890ff;">User Name</th>
+                <th style="font-weight: bolder; color: #1890ff;">Montant</th>
+                <th style="font-weight: bolder; color: #1890ff;">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of basicTable.data">
+                <td>{{order.id}}</td>
+                <td>{{order.userName}}</td>
+                <td style="font-weight:600 ;">${{order.amount}}</td>
+                <td>{{order.date | date: 'dd/MM/yyyy'}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+</nz-spin>

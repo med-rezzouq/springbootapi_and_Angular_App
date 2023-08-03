@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.nav-links .ant-btn.ant-btn-link {
+    border-radius: 5px !important;
+    font-weight: 700 !important;
+
+}
+
+.nav-links .ant-btn.ant-btn-link.active {
+    background-color: #005FC5 !important;
+}
+
+.nav-links .ant-btn.ant-btn-link:hover {
+    background-color: #005FC5 !important;
+}

@@ -1,0 +1,19 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <nz-table #basicTable [nzData]="users" [nzPageSize]="20" [nzShowPagination]="'false'">
+        <thead>
+            <tr>
+                <th style="font-weight: bolder; color: #1890ff;" >Name</th>
+                <th style="font-weight: bolder; color: #1890ff;">Email</th>
+                <th style="font-weight: bolder; color: #1890ff;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of basicTable.data">
+                <td style="font-weight:600 ;">{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td><button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
+                        (click)="deleteUser(user.id)" nzDanger>Supprimer</button></td>
+            </tr>
+        </tbody>
+    </nz-table>
+</nz-spin>

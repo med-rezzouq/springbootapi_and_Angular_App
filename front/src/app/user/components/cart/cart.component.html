@@ -1,0 +1,26 @@
+<div style="background: #ECECEC;padding:30px;">
+    <div nz-row [nzGutter]="8" *ngIf="CartProducts">
+        <div nz-col [nzSpan]="4" *ngFor="let product of CartProducts">
+            <nz-card nzTitle="{{product.productName}}">
+                <p>Prix : <strong>${{product.price}}</strong></p>
+                <p>Quantité : <strong>{{product.quantity}}</strong></p>
+                <p style="padding-top: 10px;">
+                    <button nzSize="small" nz-button nzType="primary" (click)="minusProduct(product.productId)"
+                        [disabled]="product.quantity == 1"><span nz-icon nzType="minus"
+                            nzTheme="outline"></span></button>
+
+                    <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
+                        (click)="plusProduct(product.productId)"><span nz-icon nzType="plus"
+                            nzTheme="outline"></span></button>
+                </p>
+            </nz-card>
+        </div>
+    </div>
+</div>
+
+<div style="margin-left: 600px;" *ngIf="CartProducts">
+    <H1>Total: ${{this.totalAmount}}</H1>
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="placeOrder()">
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Acheter</button>
+    </form>
+</div>
